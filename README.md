@@ -10,23 +10,7 @@ User Interface: A simple and intuitive interface for logging in and browsing gen
 Technology Stack: Python, Flask, Stable Diffusion, FFmpeg, HTML/CSS.
 
 Project Structure
-
-ai-generation-system/
-├── static/
-│   ├── images/       # (empty, add .gitkeep to track folder)
-│   ├── videos/       # (empty, add .gitkeep to track folder)
-├── templates/
-│   ├── login.html
-│   ├── gallery.html
-├── .env.example      # Include example placeholders for sensitive data
-├── README.md         # Comprehensive instructions
-├── requirements.txt  # Python dependencies
-├── web_app.py        # Flask app entry point
-├── generation.py     # Core generation logic
-├── models.py         # Supporting code for models (if applicable)
-├── notifications.py  # Supporting code for notifications (if applicable)
-├── utils.py          # Utility functions (if applicable)
-
+![image](https://github.com/user-attachments/assets/939df37a-af77-4e37-943d-5746f0d0abe6)
 
 Setup Instructions
 Follow these steps to set up and run the project on your local machine.
