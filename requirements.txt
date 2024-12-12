@@ -1,0 +1,10 @@
+flask==2.3.2              # Web framework to serve the web app
+diffusers==0.19.0         # For image generation using StableDiffusionPipeline
+torch==2.1.0              # PyTorch (needed for diffusers to run)
+transformers==4.36.0      # For transformer-based models (if you use any)
+ffmpeg-python==0.2.0      # For handling video generation with ffmpeg
+requests==2.31.0          # To make HTTP requests (e.g., for notifications)
+pillow==9.5.0             # For image processing (e.g., saving or manipulating images)
+numpy==1.24.3             # For numerical operations (e.g., handling image data)
+python-dotenv==1.0.0      # For loading environment variables from a `.env` file
+slack_sdk==3.23.0         # For sending notifications via Slack (if used)

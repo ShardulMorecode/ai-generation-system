@@ -1,0 +1,28 @@
+# Python cache and bytecode files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment directory
+venv/
+env/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment variable files (store sensitive information like API keys here)
+.env
+
+# Generated media files (e.g., images and videos)
+static/images/
+static/videos/
+
+# PyCharm or other IDE config files
+.idea/
+
+# MacOS Finder folder attributes
+.DS_Store
+
+# Windows thumbnail cache
+Thumbs.db
