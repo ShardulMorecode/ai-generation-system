@@ -7,20 +7,17 @@ STATIC_DIR = 'static'
 IMAGES_DIR = os.path.join(STATIC_DIR, 'images')
 VIDEOS_DIR = os.path.join(STATIC_DIR, 'videos')
 
-# Make sure directories exist
 os.makedirs(IMAGES_DIR, exist_ok=True)
 os.makedirs(VIDEOS_DIR, exist_ok=True)
 
 # Initialize the Stable Diffusion model
 def load_model():
-    # Use LMSDiscreteScheduler as an alternative scheduler
     scheduler = LMSDiscreteScheduler.from_pretrained("CompVis/stable-diffusion-v1-4", subfolder="scheduler")
     model = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4", scheduler=scheduler)
     return model
 
 model = load_model()
 
-# Use GPU if available, otherwise use CPU
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
 
@@ -33,12 +30,12 @@ def generate_images(prompt, num_images=1):
         image_filename = f"{prompt.replace(' ', '_')}_{idx+1}.png"
         image_path = os.path.join(IMAGES_DIR, image_filename)
         image.save(image_path)
-        images.append(image_filename)  # Only store the filename, not the full path
+        images.append(image_filename)  
     return images
 
 # Video generation logic
 def generate_videos(prompt, num_videos=1):
-    images = generate_images(prompt, num_images=10)  # Generate frames for the video
+    images = generate_images(prompt, num_images=10)  
     video_paths = []
     for idx in range(num_videos):
         video_filename = f"{prompt.replace(' ', '_')}_{idx+1}.mp4"
