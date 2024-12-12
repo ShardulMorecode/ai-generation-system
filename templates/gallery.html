@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 10px;
+        }
+        .grid-item {
+            text-align: center;
+        }
+        video, img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Content Gallery</h1>
+    <div class="grid-container">
+        {% for image in content.image_paths %}
+        <div class="grid-item">
+            <img src="{{ url_for('static', filename='images/' + image) }}" alt="Generated Image">
+        </div>
+        {% endfor %}
+        {% for video in content.video_paths %}
+        <div class="grid-item">
+            <video controls>
+                <source src="{{ url_for('static', filename='videos/' + video) }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
