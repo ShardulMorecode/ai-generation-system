@@ -33,8 +33,8 @@ def gallery():
     prompt = "A futuristic city at sunset"
     
     # Generate images and videos based on the prompt
-    image_paths = generate_images(prompt, num_images=1)  # Generate one image
-    video_paths = generate_videos(prompt, num_videos=1)  # Generate one video
+    image_paths = generate_images(prompt, num_images=1) 
+    video_paths = generate_videos(prompt, num_videos=1)  
 
     # Pass generated content (image and video paths) to the gallery template
     return render_template("gallery.html", content={"image_paths": image_paths, "video_paths": video_paths})
